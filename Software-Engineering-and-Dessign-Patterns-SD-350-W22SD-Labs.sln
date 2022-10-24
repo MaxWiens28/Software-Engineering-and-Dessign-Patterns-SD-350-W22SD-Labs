@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software-Engineering-and-Dessign-Patterns-SD-350-W22SD-Labs", "Software-Engineering-and-Dessign-Patterns-SD-350-W22SD-Labs\Software-Engineering-and-Dessign-Patterns-SD-350-W22SD-Labs.csproj", "{06472654-4184-42F8-A026-DDF5157BE96B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06472654-4184-42F8-A026-DDF5157BE96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06472654-4184-42F8-A026-DDF5157BE96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06472654-4184-42F8-A026-DDF5157BE96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06472654-4184-42F8-A026-DDF5157BE96B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85305A0A-A84C-4393-98F8-3222D90E7CCB}
+	EndGlobalSection
+EndGlobal
