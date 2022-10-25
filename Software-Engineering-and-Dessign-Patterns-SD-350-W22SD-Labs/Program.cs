@@ -1,83 +1,44 @@
-﻿namespace ConsoleStack
+﻿namespace BadgeEarner
 {
     public abstract class Client
     {
         public string Name { get; set; }
         public string Email { get; set; }
         public int? Age { get; set; }
-        public bool accessDisabled { get; set; }
-        public IAccessHandler AccessHandler { get; set; }
-        public override virtual void PerformAccessHandler()
+        public int badges { get; set; }
+        public override string Description { get; set; }
+        public virtual string GetDescription()
         {
-            AccessHandler.getAccess();
+            return Description;
         }
-
+        public virtual int GetBadges()
+        {
+            return badges;
+        }
         public Client(string Name, string Email, int Age)
         {
             Name = Name;
             Email = Email;
             Age = Age;
-            accessDisabled = false;
+            badges = 0;
+            Description = "";
         }
     }
 
-    public class User : Client
+    public class baseUser : Client
     {
-        public int Reputation { get; set; }
-        public User(string Name, string Email, int Age, int Reputation) : base(Name, Email, Age)
+        public baseUser(string Name, string Email, int Age): base(Name, Email, Age)
         {
-            Reputation = Reputation;
-            AccessHandler = new HasReputation(Reputation);
-        }
-    }
-    public class Manager : Client
-    {
-        public Manager(string Name, string Email, int Age) : base(Name, Email, Age)
-        {
-            AccessHandler = new HasAccessAutomatic();
-        }
-    }
-    public class Admin : Client
-    {
-        public Admin(string Name, string Email, int Age) : base(Name, Email, Age)
-        {
-            AccessHandler = new HasAccessAutomatic();
+            string Description = "Base-level User.";
         }
     }
 
-    public interface IAccessHandler
+    public class BadgeDecorator: Client
     {
-        public bool getAccess(int? Reputation, bool accessDisabled);
-    }
-
-    public class HasReputation : IAccessHandler
-    {
-        public bool getAccess(int? Reputation, bool accessDisabled)
+        public int GetBadges(Client client)
         {
-            if (Reputation < 20)
-            {
-                return accessDisabled = true;
-            }
-            else
-            {
-                return accessDisabled = false;
-            }
+            client.badges++;
+            return badges;
         }
     }
-
-    public class HasAccessAutomatic : IAccessHandler
-    {
-        public bool getAccess(int? Reputation, bool accessDisabled)
-        {
-            if (accessDisabled = false)
-            {
-                return accessDisabled = true;
-            }
-            else
-            {
-                return accessDisabled = false;
-            }
-        }
-    }
-
 }
